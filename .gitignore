@@ -1,0 +1,14 @@
+target/
+*.war
+*.class
+db.properties
+.env
+.env.*
+!.env.example
+*.log
+*.log.*
+logs/
+/.codex/
+/.agents/
+/.aws/
+/.github/modernize/

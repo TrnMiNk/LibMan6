@@ -1,0 +1,4 @@
+# Copy to db.properties and configure locally. Never commit db.properties.
+db.url=jdbc:mysql://localhost:3306/LibMan6?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Bangkok
+db.user=libman6_user
+db.password=

@@ -1,0 +1,61 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f2f5f8; color: #203047; font: 16px/1.6 system-ui, sans-serif; }
+main { width: calc(100% - 32px); max-width: 680px; margin: 32px auto; padding: 32px; background: white; border: 1px solid #dce3eb; border-radius: 12px; }
+h1 { line-height: 1.25; font-size: 1.8rem; }
+a { color: #174e9a; }
+.brand { color: #50647d; }
+label { display: block; margin-top: 16px; font-weight: 600; }
+input { font: inherit; }
+input:not([type=radio]):not([type=checkbox]) { width: 100%; padding: 10px 12px; border: 1px solid #8393a8; border-radius: 6px; }
+input:focus, button:focus-visible, a:focus-visible { outline: 3px solid #77acf0; outline-offset: 2px; }
+button, .button { display: inline-block; margin-top: 24px; padding: 10px 24px; background: #174e9a; color: white; border: 0; border-radius: 6px; font: inherit; text-decoration: none; cursor: pointer; }
+.error, .notice, .success { padding: 12px 16px; border-radius: 6px; overflow-wrap: anywhere; }
+.error { background: #fce9e9; color: #8d2020; }
+.notice { background: #fff3cf; color: #654700; }
+.success { background: #e4f4ea; color: #1a6637; }
+dl { display: grid; grid-template-columns: 145px 1fr; gap: 12px; }
+dt { font-weight: 600; } dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 480px) { main { padding: 20px; } dl { grid-template-columns: 1fr; gap: 4px; } dd { margin-bottom: 12px; } }
+.wide { max-width: 1100px; }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { text-align: left; vertical-align: top; padding: 10px; border-bottom: 1px solid #dce3eb; overflow-wrap: anywhere; }
+th { background: #f2f5f8; }
+td input[type=number] { min-width: 80px; }
+td input:not([type]) { min-width: 140px; }
+input[type=checkbox], input[type=radio] { width: auto; }
+fieldset { margin-top: 20px; border: 1px solid #8393a8; border-radius: 6px; }
+.payment-options { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 12px 0; }
+.payment-options .radio-option { display: inline-flex; align-items: center; gap: 8px; margin: 0; white-space: nowrap; }
+.radio-option input[type=radio] { flex: 0 0 auto; width: 1rem; height: 1rem; margin: 0; padding: 0; }
+.secondary { background: #526177; }
+.site-header { width: 100%; display: flex; align-items: center; justify-content: space-between; background: #edf4fc; color: #12345A; border-bottom: 1px solid #c4d9f5; }
+.header-inner { width: 100%; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.header-navigation { display: flex; align-items: center; gap: 24px; flex-shrink: 0; }
+.header-brand { font-size: 30px; font-weight: 800; color: #12345A; white-space: nowrap; }
+.site-header a { color: #12345A; text-underline-offset: 4px; }
+.header-account { display: flex; align-items: center; gap: 16px; margin-left: auto; min-width: 0; }
+.header-user { min-width: 0; overflow-wrap: anywhere; }
+.header-account form { flex-shrink: 0; margin: 0; width: auto; }
+.header-account button { width: auto; margin: 0; padding: 6px 14px; border: 1px solid #174e9a; background: #174e9a; color: white; white-space: nowrap; }
+.header-account button:hover { background: #123f7d; }
+@media (max-width: 600px) {
+    .header-inner { flex-wrap: wrap; gap: 12px; padding: 12px 16px; }
+    .header-navigation { flex-wrap: wrap; flex-shrink: 1; min-width: 0; }
+    .header-account { width: 100%; justify-content: flex-end; }
+}
+@media print {
+    @page { margin: 15mm; }
+    body { padding: 0; margin: 0; background: white; color: black; font-size: 11pt; }
+    .receipt { width: 100%; max-width: none; margin: 0; border: 0; border-radius: 0; padding: 0; }
+    .site-header { display: none !important; }
+    .no-print { display: none !important; }
+    body:has(#receipt-content) * { visibility: hidden; }
+    body #receipt-content, body #receipt-content * { visibility: visible; }
+    #receipt-content { position: absolute; top: 0; left: 0; width: 100%; }
+    #receipt-content .no-print, #receipt-content .notice, #receipt-content .success,
+    #receipt-content nav, #receipt-content button { display: none !important; }
+    .table-scroll { overflow: visible; }
+    thead { display: table-header-group; }
+    tr { break-inside: avoid; }
+}

@@ -1,0 +1,9 @@
+<%@ page pageEncoding="UTF-8" %>
+<div class="table-scroll"><table>
+<thead><tr><th>Tài liệu</th><th>Số lượng trả</th><th>Số lượng hỏng</th><th>Ghi chú</th><th>Tiền phạt</th></tr></thead>
+<tbody><c:forEach var="item" items="${slip.details}"><tr>
+<td><c:out value="${fn:replace(item.borrowDetail.document.title, '[DEMO RETURN6] ', '')}" /><br><small>Chi tiết mượn #<c:out value="${item.borrowDetail.id}" /></small></td>
+<td><c:out value="${item.returnedQuantity}" /></td><td><c:out value="${item.damagedQuantity}" /></td>
+<td><c:out value="${item.conditionNote}" /></td><td><fmt:formatNumber value="${item.fineAmount}" minFractionDigits="2" maxFractionDigits="2" /></td>
+</tr></c:forEach></tbody></table></div>
+<p><strong>Tổng phạt: <c:choose><c:when test="${slip.totalFine.signum() == 0}">Không phát sinh phạt (0.00)</c:when><c:otherwise><fmt:formatNumber value="${slip.totalFine}" minFractionDigits="2" maxFractionDigits="2" /></c:otherwise></c:choose></strong></p>

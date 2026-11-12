@@ -1,0 +1,2 @@
+<%@ page pageEncoding="UTF-8" %>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style6.css?v=3df08b76">

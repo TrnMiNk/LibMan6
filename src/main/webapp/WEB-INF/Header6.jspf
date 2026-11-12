@@ -1,0 +1,19 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<header class="site-header no-print">
+<div class="header-inner">
+<nav class="header-navigation" aria-label="Điều hướng chính">
+<span class="header-brand">LibMan6</span>
+<a href="${pageContext.request.contextPath}/">Trang chủ</a>
+</nav>
+<c:if test="${not empty sessionScope.account6}">
+<div class="header-account">
+<span class="header-user"><c:out value="${sessionScope.account6.displayName}" /></span>
+<form method="post" action="${pageContext.request.contextPath}/auth">
+<input type="hidden" name="action" value="logout"><input type="hidden" name="csrfToken" value="<c:out value='${sessionScope.csrfToken6}' />">
+<button type="submit">Đăng xuất</button></form>
+</div>
+</c:if>
+</div>
+</header>
